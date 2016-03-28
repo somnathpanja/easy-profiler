@@ -11,7 +11,7 @@
   fn.prototype.info = function () {
     var opr = this.operation;
     this.operation = null;
-    return {name: this.name, hitIndex: this.hitIndex, start: opr.s, end: opr.e, duration: opr.diff};
+    return {name: this.name, hitIndex: this.hitIndex, duration: opr.diff, start: opr.s, end: opr.e};
   };
 
   fn.prototype.in = function () {

@@ -16,5 +16,5 @@ PROFILLER.begin('HI');
 for(var i =0 ;i<1000;i++){
   var j= 0+9;
 }
-PROFILLER.end('HI');
+PROFILLER.end('HI',true);
 PROFILLER.report(true);
