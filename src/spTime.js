@@ -1,41 +1,31 @@
 (function () {
   'use strict';
+  require('./spBase');
+  var FN = require('./model/function');
 
-  if (GLOBAL.PROFILLER){
-    return;
-  } else {
-    GLOBAL.PROFILLER = {_d: {}};
-  }
-
-  PROFILLER.startJob = function (jobName) {
-    GLOBAL.PROFILLER._d[jobName] = {s: Date.now(), e: null};
+  PROFILLER.begin = function (jobName) {
+    var fn = PROFILLER._d[jobName] ? PROFILLER._d[jobName] : new FN(jobName);
+    PROFILLER._d[jobName] = fn;
+    fn.in();
   };
 
-  PROFILLER.stopJob = function (jobName) {
-    var profile = GLOBAL.PROFILLER._d[jobName];
-    if(!profile) return;
-    profile.e = Date.now();
-    delete GLOBAL.PROFILLER._d[jobName];
-    var profileStr = GLOBAL.PROFILLER.getTimeDiff(jobName, profile);
-    console.log(profileStr);
-    return profileStr;
+  PROFILLER.end = function (jobName) {
+    var fn = PROFILLER._d[jobName];
+    if (!fn) throw new Error(jobName + ' is not started. Make sure begin is called before end');
+    fn.out();
+    var info = fn.info();
+    PROFILLER._history.push(info);
+    return info;
   };
 
-  PROFILLER.getTimeDiff = function (jobName, profile) {
-    //var tsDifInMs = (profile.e - profile.s);
-    //var tsDifInSec = tsDifInMs / 1000;
-    //var tsDifInMinute = tsDifInSec / 60;
-    //var tsDifInHour = tsDifInMinute / 60;
-    //var time = tsDifInMs + ' ms |' + tsDifInSec + ' sec |' + tsDifInMinute + ' min | ' + tsDifInHour + ' hr';
-    //return '> #' + jobName + '# - Execution Time duration is ' + time;
+  PROFILLER.report = function (printInConsole) {
+    var history = PROFILLER._history;
+    if (printInConsole) {
+      console.log(JSON.stringify(PROFILLER._history, 1, 1));
+    }
 
-    var tsDifInMs = (profile.e - profile.s);
-    var tsDifInSec = tsDifInMs / 1000;
-    var time =  tsDifInSec + ' sec';
-    return '> #' + jobName + '# - Execution Time duration is ' + time;
-  }
+    PROFILLER._history = [];
+    return history;
+  };
 
 })();
-
-PROFILLER.startJob('x');
-PROFILLER.stopJob('x');

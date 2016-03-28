@@ -3,7 +3,7 @@
   var spUtility = {};
 
   spUtility.timeDiffStr = function (start, end) {
-    var tsDifInMs = (start - end);
+    var tsDifInMs = (end - start);
     var str = '';
     if (tsDifInMs > 1000) {
       var tsDifInSec = tsDifInMs / 1000;

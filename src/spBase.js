@@ -4,7 +4,7 @@
   if (GLOBAL.PROFILLER) {
     return;
   } else {
-    GLOBAL.PROFILLER = {_d: {}};
+    GLOBAL.PROFILLER = {_d: {}, _history:[]};
   }
 
 })();
