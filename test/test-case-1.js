@@ -1,4 +1,4 @@
-require('./../src/spTime');
+require('./../index');
 
 PROFILLER.begin('HI');
 for(var i =0 ;i<1000;i++){
