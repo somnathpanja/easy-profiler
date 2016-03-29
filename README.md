@@ -5,7 +5,7 @@ Simple customizable profiler for your node.js application. Debug and find out wh
     npm install simple-profiler
 
 ## API List
-##### &lt;returns an Null&gt; SP.begin(&lt;key&gt;);
+##### &lt;returns Null&gt; SP.begin(&lt;key&gt;);
  Call this function whenever you want to begin a task
 ##### &lt;returns Object&gt; SP.end(&lt;key&gt;, &lt;doPrintInConsole&gt;);
  You just need to call SP.end(key) once your task ends. You can call this function only after calling SP.begin(key). You can pass second params as true/false if you want to print the report immediately.
