@@ -1,20 +1,20 @@
 require('./../index');
 
-PROFILLER.begin('HI');
+SF.begin('HI');
 for(var i =0 ;i<1000;i++){
   var j= 0+9;
 }
-PROFILLER.end('HI');
+SF.end('HI');
 
-PROFILLER.begin('HI');
-for(var i =0 ;i<1000;i++){
+SF.begin('HI');
+for(var i =0 ;i<100000;i++){
   var j= 0+9;
 }
-PROFILLER.end('HI');
+SF.end('HI');
 
-PROFILLER.begin('HI');
-for(var i =0 ;i<1000;i++){
+SF.begin('HI');
+for(var i =0 ;i<100000;i++){
   var j= 0+9;
 }
-PROFILLER.end('HI',true);
-PROFILLER.report(true);
+SF.end('HI',true);
+SF.report(true);
