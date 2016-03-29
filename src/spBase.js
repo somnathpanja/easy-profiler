@@ -1,13 +1,13 @@
 (function () {
   'use strict';
 
-  if (GLOBAL.SF) {
+  if (GLOBAL.SP) {
     return;
   } else {
-    GLOBAL.SF = {_d: {}, _history: [], keys: {}};
-    SF.keys.add = function (keys) {
+    GLOBAL.SP = {_d: {}, _history: [], keys: {}};
+    SP.keys.add = function (keys) {
       for(var k in keys){
-        SF.keys[k] = keys[k];
+        SP.keys[k] = keys[k];
       }
     }
   }

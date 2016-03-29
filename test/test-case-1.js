@@ -1,20 +1,20 @@
 require('./../index');
 
-SF.begin('HI');
+SP.begin('HI');
 for(var i =0 ;i<1000;i++){
   var j= 0+9;
 }
-SF.end('HI');
+SP.end('HI');
 
-SF.begin('HI');
+SP.begin('HI');
 for(var i =0 ;i<100000;i++){
   var j= 0+9;
 }
-SF.end('HI');
+SP.end('HI');
 
-SF.begin('HI');
+SP.begin('HI');
 for(var i =0 ;i<100000;i++){
   var j= 0+9;
 }
-SF.end('HI',true);
-SF.report(true);
+SP.end('HI',true);
+SP.report(true);

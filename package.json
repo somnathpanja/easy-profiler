@@ -1,0 +1,29 @@
+{
+  "name": "jscollection",
+  "version": "1.0.4",
+  "description": "A powerful collection Array, List, Stack, Queue, FixedQueue with power of LINQ for Javascript, node.js",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "node test/test-case-1.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/somnathpanja/simple-profiler.git"
+  },
+  "keywords": [
+    "profiler",
+    "simple",
+    "node.js",
+    "jsvascript",
+    "fixedqueue"
+  ],
+  "author": "Somnath Panja",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/somnathpanja/jscollection/issues"
+  },
+  "homepage": "https://github.com/somnathpanja/jscollection#readme"
+}

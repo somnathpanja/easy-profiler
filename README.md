@@ -5,22 +5,22 @@ Simple customizable profiler for your node.js application. Debug and find out wh
     npm install simple-profiler
 
 ## API List
-##### &lt;returns an Null&gt; SF.begin(&lt;key&gt;);
+##### &lt;returns an Null&gt; SP.begin(&lt;key&gt;);
  Call this function whenever you want to begin a task
-##### &lt;returns Object&gt; SF.end(&lt;key&gt;, &lt;doPrintInConsole&gt;);
- You just need to call SF.end(key) once your task ends. You can call this function only after calling SF.begin(key). You can pass second params as true/false if you want to print the report immediately.
+##### &lt;returns Object&gt; SP.end(&lt;key&gt;, &lt;doPrintInConsole&gt;);
+ You just need to call SP.end(key) once your task ends. You can call this function only after calling SP.begin(key). You can pass second params as true/false if you want to print the report immediately.
  
-##### &lt;returns Array of Object&gt; SF.report(true);
- If you plan to get consolidated profiling report at one once then call SF.report(true) once everything ends
+##### &lt;returns Array of Object&gt; SP.report(true);
+ If you plan to get consolidated profiling report at one once then call SP.report(true) once everything ends
 
 ## How to use?
 
 #### Basic example
- In the example below we will find out how much time it takes to read the file. We need to call SF.begin(String) at the beginning and call SF.end(String) once reading completes is done
+ In the example below we will find out how much time it takes to read the file. We need to call SP.begin(String) at the beginning and call SP.end(String) once reading completes is done
     
     require('simple-profiler');
     
-    SF.begin("READ-FILE");
+    SP.begin("READ-FILE");
         
     fs.readFile('/etc/hosts', 'utf8', function (err,data) {
         if (err) {
@@ -28,7 +28,7 @@ Simple customizable profiler for your node.js application. Debug and find out wh
         }
         
         console.log(data);
-        SF.end("READ-FILE", true); // second param is true that means it will print the info immediatly
+        SP.end("READ-FILE", true); // second param is true that means it will print the info immediatly
     });
  
 #### Nice way
@@ -38,13 +38,13 @@ In the example below we will find out how much time it takes to read the file.
     var fs = require('fs');
     
     // Keep all the keys at one place, plan what are the functions you are going to profile
-    SF.keys.add({
+    SP.keys.add({
        READ_FROM_HOST_FILE: "Read from host file",
        HTTP_CALL_TO_WIKI_PAGE: "Http call to wiki page"
     })
     
     // SAVE_IN_ORACLE_DB job starts here logically right?
-    SF.begin(SF.keys.READ_FROM_HOST_FILE);
+    SP.begin(SP.keys.READ_FROM_HOST_FILE);
     fs.readFile('/etc/hosts', 'utf8', function (err,data) {
         if (err) {
          return console.log(err);
@@ -53,7 +53,7 @@ In the example below we will find out how much time it takes to read the file.
         console.log(data);
         
         // SAVE_IN_ORACLE_DB job ends here
-        SF.end(SF.keys.READ_FROM_HOST_FILE, true);
+        SP.end(SP.keys.READ_FROM_HOST_FILE, true);
     });
     
 #### Want profiling report at the end only
@@ -63,14 +63,14 @@ In the example below we will find out how much time it takes to read the file.
     var fs = require('fs');
     
     // Keep all the keys at one place, plan what are the functions you are going to profile
-    SF.keys.add({
+    SP.keys.add({
       READ_FROM_HOST_FILE: "Read from host file",
       JUST_FOR_LOOP_1: "Just a forloop for testing 1",
       JUST_FOR_LOOP_2: "Just a forloop for testing 2"
     });
     
     // SAVE_IN_ORACLE_DB job starts here logically right?
-    SF.begin(SF.keys.READ_FROM_HOST_FILE);
+    SP.begin(SP.keys.READ_FROM_HOST_FILE);
     
     fs.readFile('/etc/hosts', 'utf8', function (err, data) {
       if (err) {
@@ -80,23 +80,23 @@ In the example below we will find out how much time it takes to read the file.
       console.log(data);
     
       // SAVE_IN_ORACLE_DB job ends here
-      SF.end(SF.keys.READ_FROM_HOST_FILE);
+      SP.end(SP.keys.READ_FROM_HOST_FILE);
     
     
-      SF.begin(SF.keys.JUST_FOR_LOOP_1);
+      SP.begin(SP.keys.JUST_FOR_LOOP_1);
       for (var i = 0; i < 1000000; i++) {
         var j = 0 + 9; // Just time pass
       }
-      SF.end(SF.keys.JUST_FOR_LOOP_1);
+      SP.end(SP.keys.JUST_FOR_LOOP_1);
     
-      SF.begin(SF.keys.JUST_FOR_LOOP_2);
+      SP.begin(SP.keys.JUST_FOR_LOOP_2);
       for (var i = 0; i < 1000000; i++) {
         var j = 0 + 9; // Just time pass
       }
-      SF.end(SF.keys.JUST_FOR_LOOP_2);
+      SP.end(SP.keys.JUST_FOR_LOOP_2);
     
       // Yes final report is here
-      SF.report(true);
+      SP.report(true);
     });
 ###### Output
     ******************** Profiling Summery ********************
