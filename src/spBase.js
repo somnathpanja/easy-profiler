@@ -1,13 +1,13 @@
 (function () {
   'use strict';
 
-  if (GLOBAL.SP) {
+  if (GLOBAL.EP) {
     return;
   } else {
-    GLOBAL.SP = {_d: {}, _history: [], keys: {}};
-    SP.keys.add = function (keys) {
+    GLOBAL.EP = {_d: {}, _history: [], keys: {}};
+    EP.keys.add = function (keys) {
       for(var k in keys){
-        SP.keys[k] = keys[k];
+        EP.keys[k] = keys[k];
       }
     }
   }

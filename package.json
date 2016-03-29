@@ -1,7 +1,7 @@
 {
-  "name": "simple-profiler",
-  "version": "1.0.4",
-  "description": "Simple profiler for node.js application. Debug and find out which part of your code is taking more time, more cpu in an organized way.",
+  "name": "easy-profiler",
+  "version": "1.1.0",
+  "description": "easy profiler for node.js application. Debug and find out which part of your code is taking more time, more cpu in an organized way.",
   "main": "index.js",
   "directories": {
     "test": "test"
@@ -11,11 +11,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/somnathpanja/simple-profiler.git"
+    "url": "https://github.com/somnathpanja/easy-profiler.git"
   },
   "keywords": [
     "profiler",
-    "simple",
+    "easy",
     "node.js",
     "jsvascript",
     "fixedqueue"
@@ -23,7 +23,7 @@
   "author": "Somnath Panja",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/somnathpanja/simple-profiler/issues"
+    "url": "https://github.com/somnathpanja/easy-profiler/issues"
   },
-  "homepage": "https://github.com/somnathpanja/simple-profiler#readme"
+  "homepage": "https://github.com/somnathpanja/easy-profiler#readme"
 }

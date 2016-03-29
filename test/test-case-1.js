@@ -1,20 +1,20 @@
 require('./../index');
 
-SP.begin('HI');
+EP.begin('HI');
 for(var i =0 ;i<1000;i++){
   var j= 0+9;
 }
-SP.end('HI');
+EP.end('HI');
 
-SP.begin('HI');
+EP.begin('HI');
 for(var i =0 ;i<100000;i++){
   var j= 0+9;
 }
-SP.end('HI');
+EP.end('HI');
 
-SP.begin('HI');
+EP.begin('HI');
 for(var i =0 ;i<100000;i++){
   var j= 0+9;
 }
-SP.end('HI',true);
-SP.report(true);
+EP.end('HI',true);
+EP.report(true);
