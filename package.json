@@ -1,7 +1,7 @@
 {
-  "name": "jscollection",
+  "name": "simple-profiler",
   "version": "1.0.4",
-  "description": "A powerful collection Array, List, Stack, Queue, FixedQueue with power of LINQ for Javascript, node.js",
+  "description": "Simple profiler for node.js application. Debug and find out which part of your code is taking more time, more cpu in an organized way.",
   "main": "index.js",
   "directories": {
     "test": "test"
@@ -23,7 +23,7 @@
   "author": "Somnath Panja",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/somnathpanja/jscollection/issues"
+    "url": "https://github.com/somnathpanja/simple-profiler/issues"
   },
-  "homepage": "https://github.com/somnathpanja/jscollection#readme"
+  "homepage": "https://github.com/somnathpanja/simple-profiler#readme"
 }
