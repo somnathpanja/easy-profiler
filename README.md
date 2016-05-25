@@ -100,8 +100,8 @@ In the example below we will find out how much time it takes to read the file.
     });
 ###### Output
     ******************** Profiling Summery ********************
-    0> {"name":"Read from host file","hitIndex":1,"duration":"22ms","start":1459235204120,"end":1459235204142}
-    1> {"name":"Just a forloop for testing 1","hitIndex":1,"duration":"2ms","start":1459235204143,"end":1459235204145}
-    2> {"name":"Just a forloop for testing 2","hitIndex":1,"duration":"2ms","start":1459235204146,"end":1459235204148}
+    0> {"name":"Read from host file","hitCount":1,"duration":"22ms","start":1459235204120,"end":1459235204142}
+    1> {"name":"Just a forloop for testing 1","hitCount":1,"duration":"2ms","start":1459235204143,"end":1459235204145}
+    2> {"name":"Just a forloop for testing 2","hitCount":1,"duration":"2ms","start":1459235204146,"end":1459235204148}
     ***********************************************************
     
