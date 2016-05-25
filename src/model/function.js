@@ -4,18 +4,18 @@
 
   var fn = function fn(name) {
     this.name = name;
-    this.hitIndex = 0;
+    this.hitCount = 0;
     this.operation = null;
   };
 
   fn.prototype.info = function () {
     var opr = this.operation;
     this.operation = null;
-    return {name: this.name, hitIndex: this.hitIndex, duration: opr.diff, start: opr.s, end: opr.e};
+    return {name: this.name, hitCount: this.hitCount, duration: opr.diff, start: opr.s, end: opr.e};
   };
 
   fn.prototype.in = function () {
-    this.hitIndex++;
+    this.hitCount++;
     if (this.operation && this.operation.e) {
       throw new Error('in() is called twice with the same key');
     } else {
