@@ -25,5 +25,8 @@
   "bugs": {
     "url": "https://github.com/somnathpanja/easy-profiler/issues"
   },
-  "homepage": "https://github.com/somnathpanja/easy-profiler#readme"
+  "homepage": "https://github.com/somnathpanja/easy-profiler#readme",
+  "dependencies": {
+    "jscollection": "^1.0.8"
+  }
 }

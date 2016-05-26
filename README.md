@@ -98,10 +98,15 @@ In the example below we will find out how much time it takes to read the file.
       // Yes final report is here
       EP.report(true);
     });
+    
 ###### Output
-    ******************** Profiling Summery ********************
-    0> {"name":"Read from host file","hitCount":1,"duration":"22ms","start":1459235204120,"end":1459235204142}
-    1> {"name":"Just a forloop for testing 1","hitCount":1,"duration":"2ms","start":1459235204143,"end":1459235204145}
-    2> {"name":"Just a forloop for testing 2","hitCount":1,"duration":"2ms","start":1459235204146,"end":1459235204148}
-    ***********************************************************
+┌───────────────────╮
+│ Profiling Summery │
+├────────────────────────────────────────────────────────────────────────────────────────╮
+│ name                         │  hitCount │  duration │  start         │  end           │
+├────────────────────────────────────────────────────────────────────────────────────────┤
+│ Read from host file          │  1        │  13ms     │  1464248935746 │  1464248935759 │
+│ Just a forloop for testing 1 │  1        │  3ms      │  1464248935760 │  1464248935763 │
+│ Just a forloop for testing 2 │  1        │  2ms      │  1464248935763 │  1464248935765 │
+╰────────────────────────────────────────────────────────────────────────────────────────╯
     

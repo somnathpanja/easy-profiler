@@ -1,6 +1,7 @@
 (function () {
   'use strict';
   require('./spBase');
+  var List = require('jscollection').List;
   var FN = require('./model/function');
   EP.consolidatedReport = true;
 
@@ -29,11 +30,9 @@
   EP.report = function (printInConsole) {
     var history = EP._history;
     if (printInConsole) {
-      console.log("\n******************** Profiling Summery ********************");
-      history.forEach(function (item, index) {
-        console.log(index + '> ' + JSON.stringify(item));
-      });
-      console.log("***********************************************************\n");
+      console.log("┌───────────────────╮");
+      console.log("│ Profiling Summery │");
+      List.toList(history).printInConsoleAsTable();
     }
 
     EP._history = [];
