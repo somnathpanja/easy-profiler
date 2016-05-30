@@ -1,4 +1,5 @@
-# easy-profiler [![Build Status](https://travis-ci.org/somnathpanja/jscollection.svg?branch=master)](https://travis-ci.org/somnathpanja/jscollection)
+[![Build Status](https://travis-ci.org/somnathpanja/jscollection.svg?branch=master)](https://travis-ci.org/somnathpanja/jscollection)
+# easy-profiler
 Simple profiler for your node.js application. Debug and find out which part of your code is taking more time, more cpu in an organized way.
 
 ## How to install?
