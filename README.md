@@ -105,13 +105,5 @@ In the example below we will find out how much time it takes to read the file.
     });
     
 ###### Output
-┌───────────────────╮
-│ Profiling Summery │
-├────────────────────────────────────────────────────────────────────────────────────────╮
-│ name                         │  hitCount │  duration │  start         │  end           │
-├────────────────────────────────────────────────────────────────────────────────────────┤
-│ Read from host file          │  1        │  13ms     │  1464248935746 │  1464248935759 │
-│ Just a forloop for testing 1 │  1        │  3ms      │  1464248935760 │  1464248935763 │
-│ Just a forloop for testing 2 │  1        │  2ms      │  1464248935763 │  1464248935765 │
-╰────────────────────────────────────────────────────────────────────────────────────────╯
-    
+
+![alt tag](https://raw.githubusercontent.com/somnathpanja/easy-profiler/master/easy-profiler.png)
