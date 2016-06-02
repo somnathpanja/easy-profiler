@@ -12,7 +12,10 @@ Simple profiler for your node.js application. Debug and find out which part of y
  
 ##### &lt;returns Array of Object&gt; EP.report(true);
  If you plan to get consolidated profiling report at one once then call EP.report(true) once everything ends
-
+ 
+##### EP.isEnabled = false;
+ Disable it in production
+ 
 ## How to use?
 
 #### Basic example

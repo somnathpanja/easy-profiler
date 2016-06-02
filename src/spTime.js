@@ -6,12 +6,14 @@
   EP.consolidatedReport = true;
 
   EP.begin = function (jobName) {
+    if(!this.isEnabled) return;
     var fn = EP._d[jobName] ? EP._d[jobName] : new FN(jobName);
     EP._d[jobName] = fn;
     fn.in();
   };
 
   EP.end = function (jobName, printInConsole) {
+    if(!this.isEnabled) return;
     var fn = EP._d[jobName];
     if (!fn) throw new Error(jobName + ' is not started. Make sure begin is called before end');
     fn.out();
@@ -28,6 +30,7 @@
   };
 
   EP.report = function (printInConsole) {
+    if(!this.isEnabled) return;
     var history = EP._history;
     if (printInConsole) {
       console.log("┌───────────────────╮");
