@@ -24,6 +24,8 @@
   };
 
   fn.prototype.out = function () {
+    if(!this.operation) return;
+
     if (!this.operation.s) {
       throw new Error('out() is called twice with the same key');
     } else {
