@@ -34,7 +34,7 @@
     var history = EP._history;
     if (printInConsole) {
       console.log("┌───────────────────╮");
-      console.log("│ Profiling Summery │");
+      console.log("│ Profiling Summary │");
       List.toList(history).printInConsoleAsTable();
     }
 
