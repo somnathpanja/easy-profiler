@@ -1,10 +1,10 @@
 (function () {
   'use strict';
 
-  if (GLOBAL.EP) {
+  if (global.EP) {
     return;
   } else {
-    GLOBAL.EP = {_d: {}, _history: [], keys: {}, isEnabled: true};
+    global.EP = {_d: {}, _history: [], keys: {}, isEnabled: true};
     EP.keys.add = function (keys) {
       for (var k in keys) {
         EP.keys[k] = keys[k];
