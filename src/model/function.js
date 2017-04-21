@@ -10,8 +10,9 @@
 
   fn.prototype.info = function () {
     var opr = this.operation;
-    this.operation = null;
-    return {name: this.name, hitCount: this.hitCount, duration: opr.diff, start: opr.s, end: opr.e};
+    if(opr) {
+      return {name: this.name, hitCount: this.hitCount, duration: opr.diff, start: opr.s, end: opr.e};
+    }
   };
 
   fn.prototype.in = function () {
