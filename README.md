@@ -1,4 +1,4 @@
-# easy-profiler
+# easy-profiler | V 2.0.0
 [![Build Status](https://travis-ci.org/somnathpanja/jscollection.svg?branch=master)](https://travis-ci.org/somnathpanja/jscollection)
 
 Simple profiler for your node.js application. Debug and find out which part of your code is taking more time, more cpu in an organized way.
@@ -25,7 +25,7 @@ Simple profiler for your node.js application. Debug and find out which part of y
     
     require('easy-profiler');
     
-    EP.begin("READ-FILE");
+    var readFile = EP.begin("READ-FILE");
         
     fs.readFile('/etc/hosts', 'utf8', function (err,data) {
         if (err) {
@@ -33,7 +33,7 @@ Simple profiler for your node.js application. Debug and find out which part of y
         }
         
         console.log(data);
-        EP.end("READ-FILE", true); // second param is true that means it will print the info immediatly
+        readFile.end("READ-FILE", true); // second param is true that means it will print the info immediatly
     });
  
 #### Nice way
@@ -49,7 +49,7 @@ In the example below we will find out how much time it takes to read the file.
     })
     
     // SAVE_IN_ORACLE_DB job starts here logically right?
-    EP.begin(EP.keys.READ_FROM_HOST_FILE);
+    var readFromHost = EP.begin(EP.keys.READ_FROM_HOST_FILE);
     fs.readFile('/etc/hosts', 'utf8', function (err,data) {
         if (err) {
          return console.log(err);
@@ -58,7 +58,7 @@ In the example below we will find out how much time it takes to read the file.
         console.log(data);
         
         // SAVE_IN_ORACLE_DB job ends here
-        EP.end(EP.keys.READ_FROM_HOST_FILE, true);
+        readFromHost.end(true);
     });
     
 #### Want profiling report at the end only
@@ -75,7 +75,7 @@ In the example below we will find out how much time it takes to read the file.
     });
     
     // SAVE_IN_ORACLE_DB job starts here logically right?
-    EP.begin(EP.keys.READ_FROM_HOST_FILE);
+    var readFromHost = EP.begin(EP.keys.READ_FROM_HOST_FILE);
     
     fs.readFile('/etc/hosts', 'utf8', function (err, data) {
       if (err) {
@@ -85,20 +85,20 @@ In the example below we will find out how much time it takes to read the file.
       console.log(data);
     
       // SAVE_IN_ORACLE_DB job ends here
-      EP.end(EP.keys.READ_FROM_HOST_FILE);
+      readFromHost.end(EP.keys.READ_FROM_HOST_FILE);
     
     
-      EP.begin(EP.keys.JUST_FOR_LOOP_1);
+      var loop1 = EP.begin(EP.keys.JUST_FOR_LOOP_1);
       for (var i = 0; i < 1000000; i++) {
         var j = 0 + 9; // Just time pass
       }
-      EP.end(EP.keys.JUST_FOR_LOOP_1);
+      loop1.end();
     
-      EP.begin(EP.keys.JUST_FOR_LOOP_2);
+      var loop2 = EP.begin(EP.keys.JUST_FOR_LOOP_2);
       for (var i = 0; i < 1000000; i++) {
         var j = 0 + 9; // Just time pass
       }
-      EP.end(EP.keys.JUST_FOR_LOOP_2);
+      loop2.end();
     
       // Yes final report is here
       EP.report(true);

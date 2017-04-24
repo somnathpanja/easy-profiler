@@ -2,8 +2,12 @@
   'use strict';
   var spUtility = {};
 
-  spUtility.timeDiffStr = function (start, end) {
+  spUtility.timeDiffStrSE = function (start, end) {
     var tsDifInMs = (end - start);
+    return spUtility.timeDiffStr(tsDifInMs);
+  };
+
+  spUtility.timeDiffStr = function (tsDifInMs) {
     var str = '';
     if (tsDifInMs > 1000) {
       var tsDifInSec = tsDifInMs / 1000;
@@ -28,6 +32,7 @@
 
     return str;
   };
+
   /**
    * @description change display format of a date
    * @param date {Date} Date object reference
