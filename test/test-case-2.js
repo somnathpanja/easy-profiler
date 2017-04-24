@@ -8,7 +8,7 @@ EP.keys.add({
 });
 
 // SAVE_IN_ORACLE_DB job starts here logically right?
-EP.begin(EP.keys.READ_FROM_HOST_FILE);
+var readFile = EP.begin(EP.keys.READ_FROM_HOST_FILE);
 fs.readFile('/etc/hosts', 'utf8', function (err, data) {
   if (err) {
     return console.log(err);
@@ -17,20 +17,19 @@ fs.readFile('/etc/hosts', 'utf8', function (err, data) {
   console.log(data);
 
   // SAVE_IN_ORACLE_DB job ends here
-  EP.end(EP.keys.READ_FROM_HOST_FILE);
+  readFile.end();
 
-
-  EP.begin(EP.keys.JUST_FOR_LOOP_1);
+  var loop1 = EP.begin(EP.keys.JUST_FOR_LOOP_1);
   for (var i = 0; i < 1000000; i++) {
     var j = 0 + 9; // Just time pass
   }
-  EP.end(EP.keys.JUST_FOR_LOOP_1);
+  loop1.end();
 
-  EP.begin(EP.keys.JUST_FOR_LOOP_2);
+  var loop2 = EP.begin(EP.keys.JUST_FOR_LOOP_2);
   for (var i = 0; i < 1000000; i++) {
     var j = 0 + 9; // Just time pass
   }
-  EP.end(EP.keys.JUST_FOR_LOOP_2);
+  loop2.end();
 
   // Yes final report is here
   EP.report(true);
