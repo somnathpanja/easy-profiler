@@ -33,7 +33,7 @@ Simple profiler for your node.js application. Debug and find out which part of y
         }
         
         console.log(data);
-        readFile.end("READ-FILE", true); // second param is true that means it will print the info immediatly
+        readFile.end(true); // true that means it will print the info immediatly
     });
  
 #### Nice way
