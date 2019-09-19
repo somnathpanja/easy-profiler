@@ -46,7 +46,7 @@ Simple profiler for your node.js application. Debug and find out which part of y
     });
  
 #### Nice way
-In the example below we will find out how much time it takes to read the file.
+In the example below we will find out how much time it takes to read the hosts file.
      
     require('easy-profiler');
     var fs = require('fs');
@@ -57,7 +57,7 @@ In the example below we will find out how much time it takes to read the file.
        HTTP_CALL_TO_WIKI_PAGE: "Http call to wiki page"
     })
     
-    // SAVE_IN_ORACLE_DB job starts here logically right?
+    // READ_FROM_HOST_FILE job starts here logically right?
     var readFromHost = EP.begin(EP.keys.READ_FROM_HOST_FILE);
     fs.readFile('/etc/hosts', 'utf8', function (err,data) {
         if (err) {
@@ -66,12 +66,12 @@ In the example below we will find out how much time it takes to read the file.
         
         console.log(data);
         
-        // SAVE_IN_ORACLE_DB job ends here
-        readFromHost.end(true);
+        // READ_FROM_HOST_FILE job ends here
+        readFromHost.end(true); // it will print the result in console immediatly
     });
     
-#### Want profiling report at the end only
- In the example below we will find out how much time it takes to read the file. Also find out how much time is taken by two consecutive for loop
+#### Want consolidated profiling report at the end only?
+ In the example below we will find out how much time it takes to read the file. Also find out how much time is taken by two consecutive for loop.
  
     require('easy-profiler');
     var fs = require('fs');
@@ -133,5 +133,8 @@ In the example below we will find out how much time it takes to read the file.
 
 Please send your pull request. I will merge it. I will add your name in contributor list.
 
-Cheers, 
-Somnath Panja
+Cheers - Somnath Panja
+
+https://www.linkedin.com/in/somnathpanja/
+https://facebook.com/somnath.panja
+
