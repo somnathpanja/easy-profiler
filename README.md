@@ -7,15 +7,24 @@ Simple profiler for your node.js application. Debug and find out which part of y
     npm install easy-profiler
 
 ## API List
-##### &lt;returns fnObj&gt; EP.begin(&lt;key&gt;);
+
+##### 1. &lt;returns fnObj&gt; EP.begin(&lt;key&gt;);
  Call this function whenever you want to begin a task
-##### &lt;returns Object&gt; fnObj.end(&lt;doPrintInConsole&gt;);
+ ```js
+    var task = EP.begin('TASK_UNIQUE_NAME');
+```
+##### 2. &lt;returns Object&gt; fnObj.end(&lt;doPrintInConsole&gt;);
  You just need to call fnObj.end() once your task ends. You can call this function only after calling EP.begin(key). You can pass doPrintInConsole param as true/false if you want to print the report immediately.
- 
-##### &lt;returns Array of Object&gt; EP.report(true);
+ ```js
+    let printInConsoleRightNow = true;
+    task.end(printInConsoleRightNow);
+```
+##### 3. &lt;returns Array of Object&gt; EP.report(true);
  If you plan to get consolidated profiling report at one once then call EP.report(true) once everything ends
- 
-##### EP.isEnabled = false;
+ ```js
+    EP.report(true);
+ ```
+##### 4. EP.isEnabled = false;
  Disable it in production
  
 ## How to use?
