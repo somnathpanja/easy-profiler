@@ -107,3 +107,21 @@ In the example below we will find out how much time it takes to read the file.
 ###### Output
 
 ![alt tag](https://raw.githubusercontent.com/somnathpanja/easy-profiler/master/easy-profiler.png)
+
+## Projects that are using easy-profiler
+
+* Nextract is a Extract Transform Load (ETL) platform build on top of Node.js streams - https://github.com/cauld/nextract
+* jscollection - A powerfull javascript collection - https://github.com/somnathpanja/jscollection 
+* SlamminMusicBot -  https://github.com/Slamakans/SlamminMusicBot
+
+## Authors and Contributors
+
+* @somnathpanja (somnathpanja@gmail.com)
+* @phips28
+* @chrstphrhrt
+
+## How to contribute?
+
+Please send your pull request. I will merge it. I will add your name in contributor list.
+Cheers, 
+Somnath Panja
