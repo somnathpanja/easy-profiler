@@ -131,7 +131,7 @@ In the example below we will find out how much time it takes to read the hosts f
 
 ## How to contribute?
 
-Please send your pull request. I will merge it. I will add your name in contributor list. <br/>
+Please send your pull request. I will merge it. I will add your name in contributor list. <br/><br/>
 Cheers, <br/>
 Somnath Panja <br/>
 - https://www.linkedin.com/in/somnathpanja <br/>
